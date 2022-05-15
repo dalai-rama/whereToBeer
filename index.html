@@ -16,14 +16,16 @@
         <nav>
             <ul>
                 <li>Where to beer</li>
-                <li style="margin-left: 60%; font-size: large;"><a href="/form/form.html">Suma tu Bar</a></li>
-            
+                <!--<li style="margin-left: 60%; font-size: large;"><a href="/form/form.html" style="text-decoration: none">Suma tu Bar</a></li> -->
+                <li><button id="dark-light">🌓 MODO </button></li>
+                <li><a style="text-decoration: none;" href="/profile/profile.html">Perfil</a></li>
+                
             </ul>
         </nav>
     </header>
     <div id="divNav">
         <form action="">
-            <input type="search" name="nombre" placeholder="Buscar...">
+            <input id="search-bar" onkeyup='searching()' type="search" name="nombre" placeholder="Buscar...">
         </form>
     </div>
     
@@ -36,19 +38,7 @@
            <p class="categorias" id="btn-centroCultural"> 🖌️&nbsp Centro Cultural </p>
            <p class="categorias" id="btn-boliches"> 💃&nbsp Boliches </p>
            <p class="categorias" id="btn-patioDeComidas"> 🍔&nbsp Patio de Comidas </p>
-           <p class="categorias" id="btn-cafeterias"> ☕&nbsp Cafeterias </p>
-          <!--  <p class="categorias">🎸  Musica en vivo</p>
-           <p class="categorias">🎵  Electronica </p>
-           <p class="categorias">🎬  Cine </p>
-           <p class="categorias">💃  Danzas</p>
-           <p class="categorias">🎭  Teatro </p>
-           <p class="categorias">🎮  Gaming </p>
-           <p class="categorias">⚡  SUBSUELO</p>
-           <p class="categorias">🎨  Artes plasticas</p>
-           <p class="categorias">🌱  420</p>
-           <p class="categorias">🗿   Museos y Galerias</p>
-           <p class="categorias">🎪  Aire Libre</p>
-           <p class="categorias">🎠  Infantiles </p>    -->       
+           <p class="categorias" id="btn-cafeterias"> ☕&nbsp Cafeterias </p>      
            <p id="version">Versión: 0.0.1</p>
 
            
@@ -78,5 +68,7 @@
     </footer>
 
     <script src="script.js"></script>
+
+
 </body>
 </html>

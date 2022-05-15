@@ -15,6 +15,9 @@ header{
     z-index: 10000;
 }
 
+a:visited{
+    color: #111;
+}
 nav {
     font-family: 'Poppins', sans-serif;
     /* background-color: #837; */
@@ -46,11 +49,16 @@ ul {
     
 }
 
+nav ul li {
+    padding: 0 25px;
+}
+
 
 /* MAIN */
 
 h2{
     color: antiquewhite;
+    margin-bottom: 35px;
     
 }
 
@@ -89,7 +97,7 @@ main {
 .categorias {
     color: antiquewhite;
     text-align: justify;
-    margin-left: 15%;
+    margin-left: 10%;
 }
 
 #version{
@@ -201,6 +209,12 @@ main {
           
   }
 
+  .tarjeta h6 {
+      font-family: sans-serif;
+      font-size: 12px;
+      margin: 15px 0 0 15px;
+      color:#aaa
+  }
 
 /* CATEGORIAS */
 
@@ -247,10 +261,102 @@ input[type="search"]:hover{
 input[type="search"]:focus{
     color: #000;
     background-color: #ccc;
-    border: 1px solid transparent;
+    
+}
+/* LIGHT THEME */
+
+ body.lightmode {
+    background-color: #fed;
+    color: #fff;
+
+}
+
+a.lightmode{
+    color: #fff !important;
+}
+
+#leftMain.lightmode {
+    background-color: #fa0;
+}
+
+#divNav.lightmode {
+    box-shadow: none;
+    margin: none;
+}
+
+#rightMain.lightmode{
+    background-color: #fa0;
+}
+
+nav.lightmode {
+    box-shadow: none;
+    background-color: #fa0;
+}
+
+form.lightmode {
+    box-shadow: none;
+    background-color: #fa0;
+
+}
+
+.tarjeta.lightmode{
+    background-color: #fd8;
+    color: #222;
+    box-shadow: 0 0 15px #aaa;
+}
+
+.tarjeta.lightmode h6{
+    color: #444
+}
+
+.tarjeta.lightmode h2{
+    color: #444;
+}
+
+.tarjeta.lightmode iframe{
+    border-radius: 0 0 10px 10px;
+    box-shadow: none;
+    border: transparent; 
+}
+
+.tarjeta.lightmode img{
+    box-shadow: none;
+}
+
+.tarjeta.lightmode button{
+    background-color: #f80;
+    color: #fff;
+}
+
+.tarjeta.lightmode button:hover{
+    background-color: #c80;
+}
+
+.categorias.lightmode:hover{
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+}
+
+input[type="search"].lightmode{
+    width: 45%; /*ancho por defecto*/
+    background: #fed; /*icono lupa*/
+    margin: 15px;
+    padding: 9px 10px 9px 32px;
+    border-radius: 15px;
+    border: transparent;
+    outline-style: none;
     
 }
 
+input[type="search"].lightmode:hover{
+    background-color: #ffddcc;
+}
+
+input[type="search"].lightmode:focus{
+    color: #000;
+    background-color: #fff;
+
+}
 /* MEDIA QUERYS */
 
 @media screen and (max-width: 890px) {

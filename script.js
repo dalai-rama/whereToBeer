@@ -11,6 +11,7 @@ const bares = [
             bar: true,
             cafeteria: true
         },
+        vipcomerce: true,
         id: 1
     
     },
@@ -26,6 +27,7 @@ const bares = [
             cerveceria: true,
             patioComida: true
         },
+        vipcomerce: false,
         id: 2
     
     },
@@ -40,10 +42,14 @@ const bares = [
         categorias: {
             centroCultural: true,
         },
+        vipcomerce: false,
         id: 3
     
     },
 ]
+
+// VIP COMMERCES - redireccionar a los usuarios a los beneficios de vipcomerse
+// const vipCommerse = document.querySelector("#vipcommerse")
 
 
 
@@ -73,6 +79,7 @@ function crearTarjeta(data){
         </div>
         <p>${data.descripcion}</p>
         <h5>${data.direccion}  -  ${data.barrio}</h5>
+        <h6>${ data.vipcomerce ? "<b id='vipcommerse'>VIP COMMERSE</b> - Este local cuenta con descuentos exclusivos." : ""} </h6>
         <button onclick="verUbicacion(${data.id})"> Ver Ubicación </button>
         <iframe id="${data.id}" style="filter: invert(90%); display: none;" src="${data.ubicacion}" 
         width="100%" height="150" 
@@ -113,14 +120,20 @@ cargarTarjetas()
 
 // Acá comienza la magía. Filtro que cambia el style de las tarjetas.
 
-
-
 function filtrarPorCategoria(i){
     let id = i.srcElement.attributes.id.value;
     let tarjetas = document.querySelectorAll(".tarjeta");
 
-    // TO DO. falta agregar una funcion que deje en focus la categoría seleccionada.
+// TO DO. falta agregar una funcion que deje en focus la categoría seleccionada.
+
+// CONSULTAR A TUTOR PORQUE NO FUNCIONA ESTA FUNCIÓN CUANDO LE ASIGNO POR PROP UNA DE LAS CATEGORIAS
+/* function recorrer(prop){
     
+    for(let i=0; i < bares.length; i++){
+        bares[i].categorias?.prop ? tarjetas[i].style.display="flex" : tarjetas[i].style.display="none";
+    }
+}
+ */
     switch (id) {
         case "btn-todas":
         for(let i = 0; i < bares.length; i++){
@@ -131,6 +144,7 @@ function filtrarPorCategoria(i){
 
         case "btn-bares":
             console.log("HOLA BARES")
+            //recorrer(bar) //tampoco funciona con "bar"
             for(let i = 0; i < bares.length; i++){
                 bares[i].categorias?.bar ? tarjetas[i].style.display="flex" : tarjetas[i].style.display="none";
         }
@@ -181,9 +195,98 @@ function filtrarPorCategoria(i){
 
 }
 
+// SEARCHBAR
+// JavaScript code
+
+function searching() {
+    let tarjetas = document.querySelectorAll(".tarjeta");
+	let input = document.getElementById('search-bar').value;
+	input=input.toLowerCase();
+	
+	for (i = 0; i < bares.length; i++) {
+		if (!bares[i].nombre.toLowerCase().includes(input) ) {
+			tarjetas[i].style.display="none";
+		}
+		else {
+			tarjetas[i].style.display="flex";				
+		}
+	}
+
+    // (!bares[i].barrio.toLowerCase().includes(input))
+}
+
+// DARK/LIGHT THEME
+
+function lightMode(){
+    let body = document.querySelector("body")
+    let a = document.querySelector("a")
+    let lftm = document.querySelector("#leftMain")
+    let rtm = document.querySelector("#rightMain")
+    let nav = document.querySelector("nav")
+    let form = document.querySelector("form")
+    let tarjetas = document.querySelectorAll(".tarjeta")
+    let categs = document.querySelectorAll(".categorias")
+    let sbar = document.querySelector('input[type="search"]')
+
+    sbar.classList.add("lightmode")
+    for(let i=0; i < categs.length; i++ ){
+        categs[i].classList.add("lightmode")
+    }
+    for(let i=0; i < tarjetas.length; i++ ){
+        tarjetas[i].classList.add("lightmode")
+    }
+    form.classList.add("lightmode")
+    nav.classList.add("lightmode")
+    rtm.classList.add("lightmode")
+    lftm.classList.add("lightmode")
+    a.classList.add("lightmode")
+    body.classList.add("lightmode")
+
+    localStorage.setItem("theme", "light")
+}
+
+function darkMode(){
+    let body = document.querySelector("body")
+    let a = document.querySelector("a")
+    let lftm = document.querySelector("#leftMain")
+    let rtm = document.querySelector("#rightMain")
+    let nav = document.querySelector("nav")
+    let form = document.querySelector("form")
+    let tarjetas = document.querySelectorAll(".tarjeta")
+    let categs = document.querySelectorAll(".categorias")
+    let sbar = document.querySelector('input[type="search"]')
+    
+    sbar.classList.remove("lightmode")
+    for(let i=0; i < categs.length; i++ ){
+        categs[i].classList.remove("lightmode")
+    }
+    for(let i=0; i < tarjetas.length; i++ ){
+        tarjetas[i].classList.remove("lightmode")
+    }
+    form.classList.remove("lightmode")
+    nav.classList.remove("lightmode")
+    rtm.classList.remove("lightmode")
+    lftm.classList.remove("lightmode")
+    a.classList.remove("lightmode")
+    body.classList.remove("lightmode")
+    
+    localStorage.setItem("theme", "dark")
+}
 
 
+let darkLight = document.querySelector("#dark-light")
+darkLight.addEventListener("click", changeMode );
 
+function changeMode(){
+    if(localStorage.getItem("theme")== "dark" ){
+        lightMode()
 
+    } else {
+        darkMode()
 
+    }
+}
 
+document.addEventListener("DOMContentLoaded", ()=>{
+    localStorage.getItem("theme")=="light" ? lightMode() : darkMode();
+})
