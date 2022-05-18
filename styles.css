@@ -357,6 +357,14 @@ input[type="search"].lightmode:focus{
     background-color: #fff;
 
 }
+
+.letf-li{
+    position: relative;
+    cursor: pointer ;
+    left: 70%;
+    
+}
+
 /* MEDIA QUERYS */
 
 @media screen and (max-width: 890px) {

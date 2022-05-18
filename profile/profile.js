@@ -1,9 +1,10 @@
 let Usuario = class{
-    constructor(nombre,edad,email,contraseña){
+    constructor(nombre,edad,email,contraseña, avatar){
         this.nombre = nombre;
         this.edad = edad;
         this.email = email;
         this.contraseña = contraseña;
+        this.avatar = avatar;
     }
 }
 
@@ -13,13 +14,14 @@ let Usuario = class{
 //let localStorage2 = localStorage.getItem("clave", "valor")
 // obtener valores del localsotrage
 
-let usuario = new Usuario("Hernan", "23", "hernan@ejemlo.com", "contraseña123");
+let usuario = new Usuario("Hernan", "23", "hernan@ejemlo.com", "contraseña123", "https://randomuser.me/api/portraits/lego/2.jpg");
 
 const profileMain = document.querySelector("#profileApp");
 
 profileMain.innerHTML = `
 <h2> ¡Hola ${usuario.nombre}! </h2>
-<div id="avatar"> img.avtr </div>
-<h3> ¿Qué lugar vas a conocer hoy? </h3>
+<img id="avatar" src="${usuario.avatar}" style="height: 150px; border-radius: 50%;">
+<h3 style="color: white;"> ¿Qué lugar vas a conocer hoy? </h3>
+
 `
 

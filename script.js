@@ -75,12 +75,13 @@ function crearTarjeta(data){
         <h2>${data.nombre} </h2>
         <div class="rate">${data.puntuacion} ⭐</div>
         <div class="imagenTarjeta">
-            <img src="/${data.imagen}">
+            <img src="/${data.imagen}" onclick="showCarousel()">
         </div>
         <p>${data.descripcion}</p>
         <h5>${data.direccion}  -  ${data.barrio}</h5>
         <h6>${ data.vipcomerce ? "<b id='vipcommerse'>VIP COMMERSE</b> - Este local cuenta con descuentos exclusivos." : ""} </h6>
-        <button onclick="verUbicacion(${data.id})"> Ver Ubicación </button>
+        <button style="margin-bottom: 0; font-size: 16px;" onclick="agregarAFav()" > AGREGAR A FAVORITOS </button>
+        <button style="margin-top: 5px" onclick="verUbicacion(${data.id})"> Ver Ubicación </button>
         <iframe id="${data.id}" style="filter: invert(90%); display: none;" src="${data.ubicacion}" 
         width="100%" height="150" 
         style="border:0;" 
@@ -91,7 +92,6 @@ function crearTarjeta(data){
     `
     return tarjeta;
 }
-
 
 // CARGAR TARJETAS AL MAIN
 
@@ -104,7 +104,6 @@ function cargarTarjetas(){
 }
 
 cargarTarjetas()
-
 
 // FILTRO DE CATEGORÍAS
 
@@ -128,8 +127,7 @@ function filtrarPorCategoria(i){
 
 // CONSULTAR A TUTOR PORQUE NO FUNCIONA ESTA FUNCIÓN CUANDO LE ASIGNO POR PROP UNA DE LAS CATEGORIAS
 /* function recorrer(prop){
-    
-    for(let i=0; i < bares.length; i++){
+        for(let i=0; i < bares.length; i++){
         bares[i].categorias?.prop ? tarjetas[i].style.display="flex" : tarjetas[i].style.display="none";
     }
 }
@@ -241,7 +239,7 @@ function lightMode(){
     lftm.classList.add("lightmode")
     a.classList.add("lightmode")
     body.classList.add("lightmode")
-
+    
     localStorage.setItem("theme", "light")
 }
 
@@ -290,3 +288,29 @@ function changeMode(){
 document.addEventListener("DOMContentLoaded", ()=>{
     localStorage.getItem("theme")=="light" ? lightMode() : darkMode();
 })
+
+
+// AÑADIR A FAVORITOS
+
+function agregarAFav(){
+Swal.fire({
+    title: '¿Te gusto este lugar?',
+    text: "Pone aceptar si querés agregar a tus Favoritos",
+    icon: 'info',
+    showCancelButton: true,
+    cancelButtonText: 'Cancelar',
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d66',
+    confirmButtonText: 'Aceptar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Agregado a Favoritos!',
+        'Podrás ver este lugar desde tu perfil',
+        'success'
+      )
+    }
+  })
+}
+
+// FUNCION CAROUSEL BS
