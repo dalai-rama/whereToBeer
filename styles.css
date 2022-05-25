@@ -358,11 +358,19 @@ input[type="search"].lightmode:focus{
 
 }
 
+.userMain.lightmode{
+    color: #222;
+}
+
 .letf-li{
     position: relative;
     cursor: pointer ;
     left: 70%;
     
+}
+
+.hover {
+    background-color: #d22 !important;
 }
 
 /* MEDIA QUERYS */
@@ -416,4 +424,10 @@ input[type="search"].lightmode:focus{
         margin: 30px auto;
         width: 95%;
     }
+}
+
+/* CSS PROFILE.JS */
+
+.userMain{
+    color: white;
 }
