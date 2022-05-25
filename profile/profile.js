@@ -1,7 +1,6 @@
 import {darkModeProfile, lightModeProfile, verUbicacion} from "../components/functions.js"
 
 let bares = [];
-
 const obtenerDatosBares = async ()=>{
     let bares = await fetch("../bares.json")
     .then(res => res.json())
@@ -18,28 +17,23 @@ bares = bares.concat(baresNuevos)
 // USUARIO 
 
 let Usuario = class{
-    constructor(nombre,edad,email,contraseña, avatar){
+    constructor(nombre,edad,email,contraseña,avatar,portada){
         this.nombre = nombre;
         this.edad = edad;
         this.email = email;
         this.contraseña = contraseña;
         this.avatar = avatar;
+        this.portada = portada;
     }
 }
-
-//let localStorage1 = localStorage.setItem("clave", "valor")
-// mandar valores al localstorage
-
-//let localStorage2 = localStorage.getItem("clave", "valor")
-// obtener valores del localsotrage
-
-let usuario = new Usuario("NombreDeUsuario", "23", "hernan@ejemlo.com", "contraseña123", "https://randomuser.me/api/portraits/lego/2.jpg");
+let usuario = new Usuario("NombreDeUsuario", "23", "hernan@ejemlo.com", "contraseña123", "https://randomuser.me/api/portraits/lego/2.jpg", "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Xw27ExsCr46AoZ4T9xQ4_AHaEK%26pid%3DApi&f=1");
 
 const profileMain = document.querySelector("#profileApp");
 
 profileMain.innerHTML = `
+<div class="portada"><img class="portada" src="${usuario.portada}"></div>
+<img id="avatar" src="${usuario.avatar}" class="avatar">
 <h2 class="userMain" style="margin-bottom: 0px;"> ¡Hola ${usuario.nombre}! </h2>
-<img id="avatar" src="${usuario.avatar}" style="height: 150px; border-radius: 50%;">
 <h3 class="userMain"> ¿A qué lugar vas a ir hoy? </h3>
 
 `

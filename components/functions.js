@@ -71,24 +71,17 @@ export function lightModeProfile(){
     let body = document.querySelector("body")
     let a = document.querySelector("a")
     let nav = document.querySelector("nav")
-    let form = document.querySelector("form")
     let tarjetas = document.querySelectorAll(".tarjeta")
-    //let categs = document.querySelectorAll(".categorias")
-    let sbar = document.querySelector('input[type="search"]')
     let userMain = document.querySelectorAll(".userMain")
 
 
     for( let main of userMain){
         main.classList.add("lightmode")
     }
-     sbar.classList.add("lightmode")
- /* for(let i=0; i < categs.length; i++ ){
-        categs[i].classList.add("lightmode")
-    }*/
+
     for(let i=0; i < tarjetas.length; i++ ){
         tarjetas[i].classList.add("lightmode")
     } 
-    form.classList.add("lightmode")
     nav.classList.add("lightmode")
     a.classList.add("lightmode")
     body.classList.add("lightmode")
@@ -100,24 +93,16 @@ export function darkModeProfile(){
     let body = document.querySelector("body")
     let a = document.querySelector("a")
     let nav = document.querySelector("nav")
-    let form = document.querySelector("form")
     let tarjetas = document.querySelectorAll(".tarjeta")
-    //let categs = document.querySelectorAll(".categorias")
-    let sbar = document.querySelector('input[type="search"]')
     let userMain = document.querySelectorAll(".userMain")
 
 
     for( let main of userMain){
         main.classList.remove("lightmode")
     }
-        sbar.classList.remove("lightmode")
-/*     for(let i=0; i < categs.length; i++ ){
-        categs[i].classList.remove("lightmode")
-    }*/
     for(let i=0; i < tarjetas.length; i++ ){
         tarjetas[i].classList.remove("lightmode")
     } 
-    form.classList.remove("lightmode")
     nav.classList.remove("lightmode")
     a.classList.remove("lightmode")
     body.classList.remove("lightmode")
