@@ -35,7 +35,6 @@ nav {
     height: 60px;
     margin: 0;
     padding: 0;
-    box-shadow: 0 0 15px #111;
 }
 
 ul {
@@ -107,9 +106,14 @@ main {
 }
 
 .categorias {
-    color: antiquewhite;
+    color: #ededed;
+    font-size: 18px;
     text-align: left;
     margin-left: 10%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select:none;
 }
 
 #version{
@@ -134,9 +138,9 @@ main {
 /*TARJETAS */
 
 .tarjeta{
-    margin: 30px 30%;
+    margin: 30px 25%;
     display: flex;
-    width: 40%;
+    width: 50%;
     height: 100%;
     background-color: #444;
     border: transparent;
@@ -236,7 +240,8 @@ main {
 }
 
 .categorias:focus{
-    color:#c90
+    color:#c90;
+    text-shadow: 0 0 10px #ff880066;
 }
 
 
@@ -346,7 +351,12 @@ form.lightmode {
 
 .categorias.lightmode:hover{
     color: #fff;
-    text-shadow: 0 0 5px #fff;
+
+}
+
+.categorias.lightmode:focus{
+    color: #fff;
+    text-shadow: 0 0 10px #ffffffaa;
 }
 
 input[type="search"].lightmode{
@@ -397,11 +407,26 @@ input[type="search"].lightmode:focus{
     z-index: -1;
 }
 
+.wheretobeer{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select:none;
+}
 
 
 /* MEDIA QUERYS */
 
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 700px) {
+
+    .wheretobeer{
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -ms-user-select:none;
+
+    }
     
     #leftMain {
         display: none;
@@ -450,10 +475,48 @@ input[type="search"].lightmode:focus{
         margin: 30px auto;
         width: 95%;
     }
+
+    .categorias{
+        margin-left: 20% ;
+        padding: 3px 0 ;
+    }
+
+    h2{
+        margin: 80px; 
+    }
+
+    html{
+        background-color: #111;
+    }
+    body {
+        margin: 0;
+
+    }
 }
 
 /* CSS PROFILE.JS */
 
 .userMain{
     color: white;
+}
+
+/* RESPONSIVE MENU */
+
+main.hid{
+    display: none;
+}
+
+header.hid{
+    display: none;
+}
+
+.respmenu{
+    display:none;
+}
+
+.respmenu.show{
+    display: block;
+    background: linear-gradient(#111, #222, #444);
+    height: 100vh;
+  
 }

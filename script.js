@@ -1,18 +1,6 @@
-import {darkMode, lightMode, verUbicacion} from "./components/functions.js"
+import {darkMode, lightMode, verUbicacion, obtenerDatosBares, menuResponsive} from "./components/functions.js"
 
-let bares = [];
-
-const obtenerDatosBares = async ()=>{
-    let bares = await fetch("../bares.json")
-    .then(res => res.json())
-    .then((res)=>{
-        return res;
-    })
-    return bares
-}
-
-let baresNuevos = await obtenerDatosBares() 
-bares = bares.concat(baresNuevos)
+let bares = await obtenerDatosBares();
 
 // CREAR TARJETAS DE BARES CON DATA DE ARRAY BARES 
 
@@ -60,88 +48,86 @@ for( let bar of bares){
 // FILTRO DE CATEGORÍAS
 // botones, pense no declararlos pero quizas sirvan en un futuro.
 
-    const btnTodas = document.querySelector("#btn-todas").addEventListener("click", filtrarPorCategoria);
-    const btnBar = document.querySelector("#btn-bares").addEventListener("click", filtrarPorCategoria);
-    const btnCerv = document.querySelector("#btn-cervecerias").addEventListener("click", filtrarPorCategoria);
-    const btnCC = document.querySelector("#btn-centroCultural").addEventListener("click", filtrarPorCategoria);
-    const btnBoliche = document.querySelector("#btn-boliches").addEventListener("click", filtrarPorCategoria);
-    const btnPatioDeComidas = document.querySelector("#btn-patioDeComidas").addEventListener("click", filtrarPorCategoria);
-    const btnCafeteria = document.querySelector("#btn-cafeterias").addEventListener("click", filtrarPorCategoria);
+    const btnTodas = document.querySelector("#btn-todas");
+    const btnBar = document.querySelector("#btn-bares");
+    const btnCerv = document.querySelector("#btn-cervecerias");
+    const btnCC = document.querySelector("#btn-centroCultural");
+    const btnBoliche = document.querySelector("#btn-boliches");
+    const btnPatioDeComidas = document.querySelector("#btn-patioDeComidas");
+    const btnCafeteria = document.querySelector("#btn-cafeterias");
+            btnTodas.addEventListener("click", filtrarPorCategoria);
+            btnBar.addEventListener("click", filtrarPorCategoria);
+            btnCerv.addEventListener("click", filtrarPorCategoria);
+            btnCC.addEventListener("click", filtrarPorCategoria);
+            btnBoliche.addEventListener("click", filtrarPorCategoria);
+            btnPatioDeComidas.addEventListener("click", filtrarPorCategoria);
+            btnCafeteria.addEventListener("click", filtrarPorCategoria);
 
 // Acá comienza la magía. Filtro que cambia el style de las tarjetas.
-
 function filtrarPorCategoria(i){
     let id = i.srcElement.attributes.id.value;
     let tarjetas = document.querySelectorAll(".tarjeta");
 
-// TO DO. falta agregar una funcion que deje en focus la categoría seleccionada.
-function recorrer(prop){
-        for(let i=0; i < bares.length; i++){
-        bares[i].categorias?.[prop] ? tarjetas[i].style.display="flex" : tarjetas[i].style.display="none";
+    function recorrer(prop){
+            for(let i=0; i < bares.length; i++){
+            bares[i].categorias?.[prop] ? tarjetas[i].style.display="flex" : tarjetas[i].style.display="none";
+        }
     }
-}
  
     switch (id) {
         case "btn-todas":
+        btnTodas.focus();
         for(let i = 0; i < bares.length; i++){
             tarjetas[i].style.display="flex";
         }
         break;
 
-
         case "btn-bares":
-            console.log("HOLA BARES")
+            btnBar.focus();
             recorrer("bar")
             break;
 
         case "btn-cervecerias":
-            console.log("HOLA CERVEZA")
             recorrer("cerveceria")
             break;
             
         case "btn-centroCultural":
-            console.log("HOLA CENTRO CULTURAL")
             recorrer("centroCultural")
             break;
                 
         case "btn-boliches":
-            console.log("HOLA BOLICHE")
             recorrer("boliche")
             break;
             
         case "btn-patioDeComidas":
-            console.log("HOLA PATIODECOMIDA")
             recorrer("patioComida")
             break;            
         
-            case "btn-cafeterias":
-                console.log("HOLA CAFETERIA")
-                recorrer("cafeteria")
-                break;
+        case "btn-cafeterias":
+            recorrer("cafeteria")
+            break;
+
         default:
             break;
     }
 
 }
 
-// FILTRO POR CATEGORIAS CON JQUERY
+// FILTRO POR CATEGORIAS
 
 
 // SEARCHBAR
-
 const searchBar = document.getElementById("search-bar")
 searchBar.addEventListener("keyup", searching)
 
 // JavaScript code
-
-export function searching() {
+function searching() {
     let tarjetas = document.querySelectorAll(".tarjeta");
 	let input = document.getElementById('search-bar').value;
-    console.log(input)
 	input=input.toLowerCase();
 	
 	for (let i = 0; i < bares.length; i++) {
-		if (!bares[i].nombre.toLowerCase().includes(input) ) {
+		if (!bares[i].nombre.toLowerCase().includes(input) && !bares[i].barrio.toLowerCase().includes(input)){
 			tarjetas[i].style.display="none";
 		}
 		else {
@@ -150,8 +136,6 @@ export function searching() {
 	}
 
 }
-
-
 
 // DARK/LIGHT THEME
 localStorage.getItem("theme")=="light" ? lightMode() : darkMode();
@@ -170,15 +154,12 @@ function changeMode(){
 }
 
 // AÑADIR A FAVORITOS
-
 bares.forEach(bar =>{
     const btnFav = document.getElementById(`fv${bar.id}`)
     btnFav.addEventListener("click", function(){agregarAFav(bar.id)})
 })
 
-
 function agregarAFav(id){
-
 Swal.fire({
     title: '¿Te gusto este lugar?',
     text: "Pone aceptar si querés agregar a tus Favoritos",
@@ -201,4 +182,15 @@ Swal.fire({
   })
 }
 
-// FUNCION CAROUSEL BS
+//MENU RESPONSIVE !! 
+
+let btnWTB = document.querySelector(".wheretobeer");
+
+if(window.screen.width <= 700){
+    btnWTB.addEventListener("click", menuResponsive) 
+    } else if(window.screen.width > 700){
+    btnWTB.removeEventListener("click", menuResponsive);
+  }
+
+ 
+

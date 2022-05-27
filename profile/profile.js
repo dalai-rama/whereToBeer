@@ -1,18 +1,6 @@
-import {darkModeProfile, lightModeProfile, verUbicacion} from "../components/functions.js"
+import {darkModeProfile, lightModeProfile, obtenerDatosBares, verUbicacion} from "../components/functions.js"
 
-let bares = [];
-const obtenerDatosBares = async ()=>{
-    let bares = await fetch("../bares.json")
-    .then(res => res.json())
-    .then((res)=>{
-        return res;
-    })
-    return bares
-}
-
-let baresNuevos = await obtenerDatosBares() 
-
-bares = bares.concat(baresNuevos)
+const bares = await obtenerDatosBares() 
 
 // USUARIO 
 
@@ -78,8 +66,9 @@ function cargarTarjetas(value){
 }
 
 // DEVOLVER FAVORITOS
-for(let i=0; i < localStorage.length; i++){
-    localStorage[`bar${i}`] ? cargarTarjetas(i) : console.log(`${localStorage[`bar${i}`]} no existe`)
+
+for(let i=0; i < bares.length; i++){
+    if(localStorage[`bar${i}`]) cargarTarjetas(i)
 }
 
 // REMOVER FAVORITOS

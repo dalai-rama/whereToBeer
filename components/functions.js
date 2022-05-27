@@ -6,6 +6,41 @@ export function verUbicacion(data){
 
 }
 
+// OBTENER BARES ASYNC
+
+export const obtenerDatosBares = async ()=>{
+    let bares = await fetch("/bares.json")
+    .then(res => res.json())
+    return bares
+}
+
+// DISPLAY MENU RESPONSIVE
+
+export function menuResponsive(){
+    let main = document.querySelector("main");
+    let header = document.querySelector("header");
+    let respmenu = document.querySelector(".respmenu");
+    main.classList.add("hid");
+    header.classList.add("hid");
+    respmenu.classList.add("show");
+
+    function removeEfx(){
+        main.classList.remove("hid");
+        header.classList.remove("hid");
+        respmenu.classList.remove("show")
+    }
+
+    document.querySelector("#ext").addEventListener("click", ()=>{removeEfx()});
+    document.querySelector("#btn-todas").addEventListener("click", ()=>{removeEfx()});
+    document.querySelector("#btn-bares").addEventListener("click", ()=>{removeEfx()});
+    document.querySelector("#btn-cervecerias").addEventListener("click", ()=>{removeEfx()});
+    document.querySelector("#btn-centroCultural").addEventListener("click", ()=>{removeEfx()});
+    document.querySelector("#btn-boliches").addEventListener("click", ()=>{removeEfx()});
+    document.querySelector("#btn-patioDeComidas").addEventListener("click", ()=>{removeEfx()});
+    document.querySelector("#btn-cafeterias").addEventListener("click", ()=>{removeEfx()});
+
+}
+
 
 // DARK && LIGHT THEMES
 
@@ -95,6 +130,7 @@ export function darkModeProfile(){
     let nav = document.querySelector("nav")
     let tarjetas = document.querySelectorAll(".tarjeta")
     let userMain = document.querySelectorAll(".userMain")
+    
 
 
     for( let main of userMain){
