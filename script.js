@@ -46,22 +46,10 @@ for( let bar of bares){
 }
 
 // FILTRO DE CATEGORÍAS
-// botones, pense no declararlos pero quizas sirvan en un futuro.
-
-    const btnTodas = document.querySelector("#btn-todas");
-    const btnBar = document.querySelector("#btn-bares");
-    const btnCerv = document.querySelector("#btn-cervecerias");
-    const btnCC = document.querySelector("#btn-centroCultural");
-    const btnBoliche = document.querySelector("#btn-boliches");
-    const btnPatioDeComidas = document.querySelector("#btn-patioDeComidas");
-    const btnCafeteria = document.querySelector("#btn-cafeterias");
-            btnTodas.addEventListener("click", filtrarPorCategoria);
-            btnBar.addEventListener("click", filtrarPorCategoria);
-            btnCerv.addEventListener("click", filtrarPorCategoria);
-            btnCC.addEventListener("click", filtrarPorCategoria);
-            btnBoliche.addEventListener("click", filtrarPorCategoria);
-            btnPatioDeComidas.addEventListener("click", filtrarPorCategoria);
-            btnCafeteria.addEventListener("click", filtrarPorCategoria);
+const btnCat = document.querySelectorAll(".categorias")
+btnCat.forEach(btn =>{
+        btn.addEventListener("click", filtrarPorCategoria)
+    })
 
 // Acá comienza la magía. Filtro que cambia el style de las tarjetas.
 function filtrarPorCategoria(i){
@@ -76,14 +64,12 @@ function filtrarPorCategoria(i){
  
     switch (id) {
         case "btn-todas":
-        btnTodas.focus();
         for(let i = 0; i < bares.length; i++){
             tarjetas[i].style.display="flex";
         }
         break;
 
         case "btn-bares":
-            btnBar.focus();
             recorrer("bar")
             break;
 

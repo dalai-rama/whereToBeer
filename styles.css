@@ -482,12 +482,10 @@ input[type="search"].lightmode:focus{
     }
 
     h2{
-        margin: 80px; 
+        margin: 0 auto 60px auto; 
+        padding-top: 80px;
     }
 
-    html{
-        background-color: #111;
-    }
     body {
         margin: 0;
 
@@ -517,6 +515,6 @@ header.hid{
 .respmenu.show{
     display: block;
     background: linear-gradient(#111, #222, #444);
-    height: 100vh;
+    height: 120vh;
   
 }
