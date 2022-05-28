@@ -481,7 +481,7 @@ input[type="search"].lightmode:focus{
         padding: 3px 0 ;
     }
 
-    h2{
+    .res-title{
         margin: 0 auto 60px auto; 
         padding-top: 80px;
     }
@@ -515,6 +515,6 @@ header.hid{
 .respmenu.show{
     display: block;
     background: linear-gradient(#111, #222, #444);
-    height: 120vh;
+    height: 110vh;
   
 }
