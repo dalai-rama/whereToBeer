@@ -1,105 +1,95 @@
-import {darkMode, lightMode, verUbicacion, obtenerDatosBares, menuResponsive} from "./components/functions.js"
+import {darkMode,
+        lightMode,
+        verUbicacion, 
+        obtenerDatosBares, 
+        menuResponsive, 
+        crearTarjeta } from "./components/functions.js"
+
+import {rankSort, vipSort} from "./components/orderby.js" 
 
 let bares = await obtenerDatosBares();
 
 // CREAR TARJETAS DE BARES CON DATA DE ARRAY BARES 
-
-const main = document.getElementById("mainCenter")
-
-function crearTarjeta(data){
-    data.forEach((data)=>{
-    const tarjeta = document.createElement("div");
-    
-     tarjeta.innerHTML = `
-    <div class="tarjeta">
-        <h2>${data.nombre} </h2>
-        <div class="rate">${data.puntuacion} ⭐</div>
-        <div class="imagenTarjeta">
-            <img src="/${data.imagen}" onclick="showCarousel()">
-        </div>
-        <p>${data.descripcion}</p>
-        <h5>${data.direccion}  -  ${data.barrio}</h5>
-        <h6>${ data.vipcomerce ? "<b id='vipcommerse'>VIP COMMERSE</b> - Este local cuenta con descuentos exclusivos." : ""} </h6>
-        <button style="margin-bottom: 0; font-size: 16px;" id="fv${data.id}" > AGREGAR A FAVORITOS </button>
-        <button style="margin-top: 5px" id="ub${data.id}"> Ver Ubicación </button>
-        <iframe id="if${data.id}" style="filter: invert(90%); display: none;" src="${data.ubicacion}" 
-        width="100%" height="150" 
-        style="border:0;" 
-        allowfullscreen="" 
-        referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </div>
-
-    `
-    main.appendChild(tarjeta);
-
-})
-}
-
 crearTarjeta(bares);
 
 // verUbicacion - declarar boton y añadir addeventlistener
-
 for( let bar of bares){
     let btnUb = document.querySelector(`#ub${bar.id}`)
-    btnUb.addEventListener("click", function(){verUbicacion("if"+bar.id)})
+    btnUb.addEventListener("click", ()=>{verUbicacion("if"+bar.id)})
 }
 
 // FILTRO DE CATEGORÍAS
 const btnCat = document.querySelectorAll(".categorias")
-btnCat.forEach(btn =>{
-        btn.addEventListener("click", filtrarPorCategoria)
-    })
+    btnCat.forEach(btn => btn.addEventListener("click", filtrarPorCategoria))
 
-// Acá comienza la magía. Filtro que cambia el style de las tarjetas.
 function filtrarPorCategoria(i){
     let id = i.srcElement.attributes.id.value;
     let tarjetas = document.querySelectorAll(".tarjeta");
 
     function recorrer(prop){
-            for(let i=0; i < bares.length; i++){
-            bares[i].categorias?.[prop] ? tarjetas[i].style.display="flex" : tarjetas[i].style.display="none";
+        tarjetas.forEach(t=>t.style.display="none")
+        for(let i=0; i < bares.length; i++){
+            if(bares[i].categorias?.[prop]){
+            tarjetas.forEach(t => { if(t.id == i){
+                t.style.display="flex"
+                }
+            }) 
+            } 
         }
     }
- 
-    switch (id) {
-        case "btn-todas":
-        for(let i = 0; i < bares.length; i++){
-            tarjetas[i].style.display="flex";
-        }
-        break;
-
-        case "btn-bares":
-            recorrer("bar")
+    
+        switch (id) {
+            case "btn-todas":
+            for(let i = 0; i < bares.length; i++){
+                tarjetas[i].style.display="flex";
+            }
             break;
 
-        case "btn-cervecerias":
-            recorrer("cerveceria")
-            break;
-            
-        case "btn-centroCultural":
-            recorrer("centroCultural")
-            break;
+            case "btn-bares":
+                recorrer("bar")
+                break;
+
+            case "btn-cervecerias":
+                recorrer("cerveceria")
+                break;
                 
-        case "btn-boliches":
-            recorrer("boliche")
-            break;
+            case "btn-centroCultural":
+                recorrer("centroCultural")
+                break;
+                    
+            case "btn-boliches":
+                recorrer("boliche")
+                break;
+                
+            case "btn-patioDeComidas":
+                recorrer("patioComida")
+                break;            
             
-        case "btn-patioDeComidas":
-            recorrer("patioComida")
-            break;            
-        
-        case "btn-cafeterias":
-            recorrer("cafeteria")
-            break;
+            case "btn-cafeterias":
+                recorrer("cafeteria")
+                break;
 
-        default:
-            break;
-    }
+            default:
+                break;
+        }
 
 }
 
-// FILTRO POR CATEGORIAS
+ // ORDENAR BARES POR RANKING
+ let rankBtn = document.getElementById("order-ranked");
+rankBtn.addEventListener("click", ()=>{rankSort()})
+
+let vipBtn = document.getElementById("order-vip");
+vipBtn.addEventListener("click", ()=> {vipSort()});
+
+let selectOrder = document.getElementById("order-by");
+    selectOrder.onchange = ()=>{ 
+        if (selectOrder.value == "VipCommerce") { 
+            vipSort();
+        } else if(selectOrder.value == "MejorPuntuados") {
+            rankSort();        
+        } else {}
+    }
 
 
 // SEARCHBAR
@@ -169,7 +159,6 @@ Swal.fire({
 }
 
 //MENU RESPONSIVE !! 
-
 let btnWTB = document.querySelector(".wheretobeer");
 
 if(window.screen.width <= 700){
@@ -177,6 +166,3 @@ if(window.screen.width <= 700){
     } else if(window.screen.width > 700){
     btnWTB.removeEventListener("click", menuResponsive);
   }
-
- 
-

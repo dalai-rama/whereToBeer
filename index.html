@@ -32,6 +32,15 @@
         </div>
     </header>
 
+    <div class="resp-input">
+        <select id="order-by">
+            <option value="" selected> Ordenar por</option>
+            <option value="VipCommerce">Vip Commerce</option>
+            <option value="MejorPuntuados">Mejor puntuados</option>
+            <option value="MásCerca">Más cerca</option>
+        </select>
+    </div>
+
     <div class="respmenu">
         <h2 class="res-title">CATEGORIAS</h2>
         <p class="categorias" id="btn-todas" tabindex="1"> 🌶️&nbsp Todas las Categorías </p>
@@ -44,6 +53,8 @@
         <p id="ext" class="categorias" style="margin: 40px auto; text-align: center;"> EXIT</p>   
         <p id="version" style="text-align: center; margin: 20px 0;">Versión: 0.0.1</p>
     </div>
+
+
     
     <main>
      <div id="leftMain">
@@ -63,9 +74,9 @@
         <h2>ORDENAR POR</h2>
         <!--<p class="filtros">Más proximo</p>-->
         <p class="filtros">Más cerca</p>
-        <p class="filtros">Más barato</p>
-        <p class="filtros">Mejor puntuados</p>
-        <p class="filtros">VIP commerce</p>
+        <!-- <p class="filtros">Más barato</p> -->
+        <p class="filtros" id="order-ranked">Mejor puntuados</p>
+        <p class="filtros" id="order-vip">VIP commerce</p>
         <br>
         
     </div>

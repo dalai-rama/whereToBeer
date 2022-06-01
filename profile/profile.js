@@ -31,22 +31,22 @@ profileMain.innerHTML = `
 const main = document.querySelector("body");
 
 function crearTarjeta(data){
-
+    const {id, nombre, puntuacion, descripcion, barrio, vipcomerce, imagen, ubicacion, direccion} = data;
     const tarjeta = document.createElement("div");
     
      tarjeta.innerHTML = `
-    <div class="tarjeta" id="id${data.id}">
-        <h2>${data.nombre} </h2>
-        <div class="rate">${data.puntuacion} ⭐</div>
+    <div class="tarjeta" id="id${id}">
+        <h2>${nombre} </h2>
+        <div class="rate">${puntuacion} ⭐</div>
         <div class="imagenTarjeta">
-            <img src="/${data.imagen}" onclick="showCarousel()">
+            <img src="/${imagen}" onclick="showCarousel()">
         </div>
-        <p>${data.descripcion}</p>
-        <h5>${data.direccion}  -  ${data.barrio}</h5>
-        <h6>${ data.vipcomerce ? "<b id='vipcommerse'>VIP COMMERSE</b> - Este local cuenta con descuentos exclusivos." : ""} </h6>
-        <button class="remv" id="${data.id}"style="background-color: #844; margin-bottom: 0; font-size: 16px;"> REMOVER DE FAVORITOS </button>
-        <button style="margin-top: 5px" id="ub${data.id}"> Ver Ubicación </button>
-        <iframe id="if${data.id}" style="filter: invert(90%); display: none;" src="${data.ubicacion}" 
+        <p>${descripcion}</p>
+        <h5>${direccion}  -  ${barrio}</h5>
+        <h6>${vipcomerce ? "<b id='vipcommerse'>VIP COMMERSE</b> - Este local cuenta con descuentos exclusivos." : ""} </h6>
+        <button class="remv" id="${id}"style="background-color: #844; margin-bottom: 0; font-size: 16px;"> REMOVER DE FAVORITOS </button>
+        <button style="margin-top: 5px" id="ub${id}"> Ver Ubicación </button>
+        <iframe id="if${id}" style="filter: invert(90%); display: none;" src="${ubicacion}" 
         width="100%" height="150" 
         style="border:0;" 
         allowfullscreen="" 
@@ -54,7 +54,7 @@ function crearTarjeta(data){
         </iframe>
     </div>
     `
-    tarjeta.classList.add(`divtarjeta${data.id}`)
+    tarjeta.classList.add(`divtarjeta${id}`)
     return tarjeta;
 }
 

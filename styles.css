@@ -16,6 +16,10 @@ header{
     z-index: 10000;
 }
 
+a{
+    color: #111;
+}
+
 a:visited{
     color: #111;
 }
@@ -55,6 +59,7 @@ nav ul li {
 
 .wheretobeer{
     margin-right: auto;
+    font-weight: 1000;
 }
 
 .letf-li {
@@ -84,7 +89,6 @@ main {
     margin: auto;
     margin-bottom: 70px;
 }
-
 
 #leftMain {
     
@@ -128,6 +132,7 @@ main {
 
 .filtros {
     color: antiquewhite;
+    cursor: pointer;
     text-align: justify;
     margin-left: 20%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -414,6 +419,10 @@ input[type="search"].lightmode:focus{
     -ms-user-select:none;
 }
 
+.resp-input{
+    display: none;
+}
+
 
 /* MEDIA QUERYS */
 
@@ -448,8 +457,6 @@ input[type="search"].lightmode:focus{
         box-shadow: 0 0 10px #222;
     }
     
-
-
     footer{
         background-color: #222;
         display: block;
@@ -490,6 +497,50 @@ input[type="search"].lightmode:focus{
         margin: 0;
 
     }
+
+    input[type="search"]{
+        width: 60%;
+        height: auto;
+    }
+
+    input[type="search"].lightmode{
+        width: 60%;
+        height: auto;
+    }
+
+    .resp-input{
+        display: flex;
+        justify-content: center;
+        background-color: #da0;
+        padding: 5px;
+    }
+
+    .resp-input select{
+        padding: 5px;
+        width: auto;
+        border: none;
+        text-align: center;
+        background-color: transparent;
+        font-size: 14px;
+    }
+
+    .resp-input.lightmode{
+        display: flex;
+        justify-content: center;
+        background-color: #fa0;
+        padding: 5px;
+    }
+
+    .resp-input.lightmode select{
+        padding: 5px;
+        width: auto;
+        border: none;
+        background-color: transparent;
+        text-align: center;
+        cursor: pointer;
+        color: #fbfbfb;
+    }
+
 }
 
 /* CSS PROFILE.JS */
