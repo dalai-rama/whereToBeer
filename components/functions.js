@@ -47,11 +47,11 @@ export function crearTarjeta(data){
         <h2>${nombre} </h2>
         <div class="rate" title="Este puntaje esta deliberado al azar, ndea">${puntuacion} ⭐</div>
         <div class="imagenTarjeta">
-            <img src="/${imagen}" onclick="showCarousel()">
+            <img src="/${imagen}">
         </div>
         <p>${descripcion}</p>
         <h5>${direccion}  -  ${barrio}</h5>
-        <h6>${vipcomerce ? "<b id='vipcommerse'>VIP COMMERSE</b> - Este local cuenta con descuentos exclusivos." : ""} </h6>
+        <h6>${vipcomerce ? "<b id='vipcommerse'>VIP COMMERCE</b> - Este local cuenta con descuentos exclusivos." : ""} </h6>
         <button style="margin-bottom: 0; font-size: 16px;" id="fv${id}" > AGREGAR A FAVORITOS </button>
         <button style="margin-top: 5px" id="ub${id}"> Ver Ubicación </button>
         <iframe id="if${id}" style="filter: invert(90%); display: none;" src="${ubicacion}" 
@@ -87,77 +87,58 @@ export function menuResponsive(){
         orderBy.style.display="flex"
     }
 
-    document.querySelector("#ext").addEventListener("click", ()=>{removeEfx()});
-    document.querySelector("#btn-todas").addEventListener("click", ()=>{removeEfx()});
-    document.querySelector("#btn-bares").addEventListener("click", ()=>{removeEfx()});
-    document.querySelector("#btn-cervecerias").addEventListener("click", ()=>{removeEfx()});
-    document.querySelector("#btn-centroCultural").addEventListener("click", ()=>{removeEfx()});
-    document.querySelector("#btn-boliches").addEventListener("click", ()=>{removeEfx()});
-    document.querySelector("#btn-patioDeComidas").addEventListener("click", ()=>{removeEfx()});
-    document.querySelector("#btn-cafeterias").addEventListener("click", ()=>{removeEfx()});
+    let rmv = document.querySelectorAll(".categorias")
+    rmv.forEach(o => { 
+        o.addEventListener("click", ()=>{removeEfx()})
+        
+    });
 
 }
 
 
 // DARK && LIGHT THEMES
 export function lightMode(){
-    let body = document.querySelector("body")
-    let a = document.querySelector("a")
-    let lftm = document.querySelector("#leftMain")
-    let rtm = document.querySelector("#rightMain")
-    let nav = document.querySelector("nav")
-    let form = document.querySelector("form")
-    let tarjetas = document.querySelectorAll(".tarjeta")
-    let categs = document.querySelectorAll(".categorias")
-    let sbar = document.querySelector('input[type="search"]')
-    let resInput = document.querySelector(".resp-input")
+    let themeArr = [
+        document.querySelector("body"),
+        document.querySelector("a"),
+        document.querySelector("#leftMain"),
+        document.querySelector("#rightMain"),
+        document.querySelector("nav"),
+        document.querySelector("form"),
+        document.querySelector('input[type="search"]'),
+        document.querySelector(".resp-input")
+    ]
 
-    resInput.classList.add("lightmode")
-    sbar.classList.add("lightmode")
-    for(let i=0; i < categs.length; i++ ){
-        categs[i].classList.add("lightmode")
-    }
-    for(let i=0; i < tarjetas.length; i++ ){
-        tarjetas[i].classList.add("lightmode")
-    }
-    form.classList.add("lightmode")
-    nav.classList.add("lightmode")
-    rtm.classList.add("lightmode")
-    lftm.classList.add("lightmode")
-    a.classList.add("lightmode")
-    body.classList.add("lightmode")
+    document.querySelectorAll(".tarjeta").forEach(elm => themeArr.push(elm))
+    document.querySelectorAll(".categorias").forEach(elm => themeArr.push(elm))
+
+    themeArr.forEach( elm => {
+        elm.classList.add("lightmode")
+    })
     
     localStorage.setItem("theme", "light")
 }
 
 export function darkMode(){
-    let body = document.querySelector("body")
-    let a = document.querySelector("a")
-    let lftm = document.querySelector("#leftMain")
-    let rtm = document.querySelector("#rightMain")
-    let nav = document.querySelector("nav")
-    let form = document.querySelector("form")
-    let tarjetas = document.querySelectorAll(".tarjeta")
-    let categs = document.querySelectorAll(".categorias")
-    let sbar = document.querySelector('input[type="search"]')
-    let resInput = document.querySelector(".resp-input")
+    let themeArr = [
+        document.querySelector("body"),
+        document.querySelector("a"),
+        document.querySelector("#leftMain"),
+        document.querySelector("#rightMain"),
+        document.querySelector("nav"),
+        document.querySelector("form"),
+        document.querySelector('input[type="search"]'),
+        document.querySelector(".resp-input")
+    ]
 
-    resInput.classList.remove("lightmode")
-    sbar.classList.remove("lightmode")
-    for(let i=0; i < categs.length; i++ ){
-        categs[i].classList.remove("lightmode")
-    }
-    for(let i=0; i < tarjetas.length; i++ ){
-        tarjetas[i].classList.remove("lightmode")
-    }
-    form.classList.remove("lightmode")
-    nav.classList.remove("lightmode")
-    rtm.classList.remove("lightmode")
-    lftm.classList.remove("lightmode")
-    a.classList.remove("lightmode")
-    body.classList.remove("lightmode")
+    document.querySelectorAll(".tarjeta").forEach(elm => themeArr.push(elm))
+    document.querySelectorAll(".categorias").forEach(elm => themeArr.push(elm))
+
+    themeArr.forEach( elm => {
+        elm.classList.remove("lightmode");
+    })
     
-    localStorage.setItem("theme", "dark")
+    localStorage.setItem("theme", "dark");
 }
 
 // profile themes

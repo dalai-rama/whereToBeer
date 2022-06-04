@@ -20,9 +20,6 @@ a{
     color: #111;
 }
 
-a:visited{
-    color: #111;
-}
 nav {
     font-family: 'Poppins', sans-serif;
     /* background-color: #837; */
@@ -288,7 +285,7 @@ input[type="search"]:focus{
 /* LIGHT THEME */
 
  body.lightmode {
-    background-color: #fed;
+    background-color: #eec;
     color: #fff;
 
 }

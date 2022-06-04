@@ -1,9 +1,9 @@
 [    {
-        "nombre": "El bar de Verena",
+        "nombre": "Bar Inexistente",
         "descripcion":"Un bar inexistente utilizado para probar el comportamiento de la página web",
         "imagen":"public/descarga.jpg",
         "direccion":"Notengo Idea 1123",
-        "barrio": "Palermo",
+        "barrio": "Puerto Madero",
         "ubicacion":"",
         "puntuacion": "3/5",
         "categorias": {
@@ -15,13 +15,13 @@
     
     },
     {
-        "nombre": "Desarmadero",
-        "descripcion":"Un barsito en Villa Crespo, tienen varias canillas de cerveza artesanal entre las que se incluyen las producidas por ellos mismos.",
-        "imagen":"public/descarga2.jpg",
-        "direccion":"Jose Ignacio Gorriti 4295",
-        "barrio": "Palermo",
-        "ubicacion":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.3957263480143!2d-58.426340685176854!3d-34.59415356449821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca795cae367b%3A0x96a078708e4bb085!2sDesarmadero%20Bar!5e0!3m2!1ses!2sar!4v1651965830859!5m2!1ses!2sar",
-        "puntuacion": "4/5",
+        "nombre": "Arcade Club Social",
+        "descripcion":"Un barsito en Villa Crespo con canillas de cerveza artesanal y maquinas de Arcade.",
+        "imagen":"public/ArcadeClubSocial1.jpeg",
+        "direccion":"Serrano 75",
+        "barrio": "Villa Crespo",
+        "ubicacion":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11703.245170016793!2d-58.45154700331948!3d-34.60132297151729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb415c25c491%3A0x25fac408ece9111b!2sArcade%20Club%20Social!5e0!3m2!1ses-419!2sar!4v1654290906510!5m2!1ses-419!2sar",
+        "puntuacion": "3/5",
         "categorias": {
             "cerveceria": true,
             "patioComida": true
@@ -39,25 +39,26 @@
         "ubicacion":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.1992093391755!2d-58.422803991967726!3d-34.59912380891913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca7cb36091e9%3A0x14a4ef26384273e1!2sEl%20Emergente%20Almagro!5e0!3m2!1ses-419!2sar!4v1651966675048!5m2!1ses-419!2sar",
         "puntuacion": "4/5",
         "categorias": {
-            "centroCultural": true
+            "centroCultural": true,
+            "boliche": true
         },
         "vipcomerce": false,
         "id": 2
     
     },
     {
-        "nombre": "El bar de Verena",
-        "descripcion":"Un bar inexistente utilizado para probar el comportamiento de la página web",
-        "imagen":"public/descarga.jpg",
-        "direccion":"Notengo Idea 1123",
-        "barrio": "Ejemplo",
-        "ubicacion":"",
-        "puntuacion": "3/5",
+        "nombre": "Flynn's Arcade Bar",
+        "descripcion":"Un bar con maquinitas de arcade para ir a jugar y tomar cerveza/tragos con amigos.",
+        "imagen":"public/Flyns1.jpg",
+        "direccion":"Honduras 5275",
+        "barrio": "Palermo",
+        "ubicacion":"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8769.01859194592!2d-58.43512965734402!3d-34.58720029398535!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf6cf6d27d81c06b5!2sFlynn&#39;s%20Arcade%20Bar!5e0!3m2!1ses-419!2sar!4v1654290293799!5m2!1ses-419!2sar",
+        "puntuacion": "4/5",
         "categorias": {
             "bar": true,
-            "cafeteria": true
+            "cerveceria": true
         },
-        "vipcomerce": true,
+        "vipcomerce": false,
         "id": 3
     
     },
@@ -68,7 +69,7 @@
         "direccion":"Jose Ignacio Gorriti 4295",
         "barrio": "Palermo",
         "ubicacion":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.3957263480143!2d-58.426340685176854!3d-34.59415356449821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca795cae367b%3A0x96a078708e4bb085!2sDesarmadero%20Bar!5e0!3m2!1ses!2sar!4v1651965830859!5m2!1ses!2sar",
-        "puntuacion": "4/5",
+        "puntuacion": "3/5",
         "categorias": {
             "cerveceria": true,
             "patioComida": true
@@ -78,113 +79,19 @@
     
     },
     {
-        "nombre": "El Emergente",
-        "descripcion":"Centro cultural con un escenario por donde pasan varios artistas de la escena local.",
-        "imagen":"public/descarga 3.jpg",
-        "direccion":"Figueroa 1030 y Gallo 333",
-        "barrio": "Almagro",
-        "ubicacion":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.1992093391755!2d-58.422803991967726!3d-34.59912380891913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca7cb36091e9%3A0x14a4ef26384273e1!2sEl%20Emergente%20Almagro!5e0!3m2!1ses-419!2sar!4v1651966675048!5m2!1ses-419!2sar",
+        "nombre": "Gato Rojo",
+        "descripcion":"Centro cultural con distintas actividades. Cokteleria, cerveza y comida para todos los gustos.",
+        "imagen":"public/GatoRojo1.jpg",
+        "direccion":"Av. Monroe 2108",
+        "barrio": "Belgrano",
+        "ubicacion":"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5526.175078011845!2d-58.45988639967298!3d-34.55651021647549!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9c859a1c9bdb7143!2sGato%20Rojo%2C%20Espacio%20Cultural!5e0!3m2!1ses-419!2sar!4v1654291927891!5m2!1ses-419!2sar",
         "puntuacion": "4/5",
         "categorias": {
-            "centroCultural": true
+            "centroCultural": true,
+            "bar": true
         },
         "vipcomerce": false,
         "id": 5
     
-    },
-    {
-        "nombre": "El bar de Verena",
-        "descripcion":"Un bar inexistente utilizado para probar el comportamiento de la página web",
-        "imagen":"public/descarga.jpg",
-        "direccion":"Notengo Idea 1123",
-        "barrio": "Ejemplo",
-        "ubicacion":"",
-        "puntuacion": "3/5",
-        "categorias": {
-            "bar": true,
-            "cafeteria": true
-        },
-        "vipcomerce": true,
-        "id": 6
-    
-    },
-    {
-        "nombre": "Desarmadero",
-        "descripcion":"Un barsito en Villa Crespo, tienen varias canillas de cerveza artesanal entre las que se incluyen las producidas por ellos mismos.",
-        "imagen":"public/descarga2.jpg",
-        "direccion":"Jose Ignacio Gorriti 4295",
-        "barrio": "Palermo",
-        "ubicacion":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.3957263480143!2d-58.426340685176854!3d-34.59415356449821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca795cae367b%3A0x96a078708e4bb085!2sDesarmadero%20Bar!5e0!3m2!1ses!2sar!4v1651965830859!5m2!1ses!2sar",
-        "puntuacion": "4/5",
-        "categorias": {
-            "cerveceria": true,
-            "patioComida": true
-        },
-        "vipcomerce": false,
-        "id": 7
-    
-    },
-    {
-        "nombre": "El Emergente",
-        "descripcion":"Centro cultural con un escenario por donde pasan varios artistas de la escena local.",
-        "imagen":"public/descarga 3.jpg",
-        "direccion":"Figueroa 1030 y Gallo 333",
-        "barrio": "Almagro",
-        "ubicacion":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.1992093391755!2d-58.422803991967726!3d-34.59912380891913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca7cb36091e9%3A0x14a4ef26384273e1!2sEl%20Emergente%20Almagro!5e0!3m2!1ses-419!2sar!4v1651966675048!5m2!1ses-419!2sar",
-        "puntuacion": "4/5",
-        "categorias": {
-            "centroCultural": true
-        },
-        "vipcomerce": false,
-        "id": 8
-    
-    },
-    {
-        "nombre": "El bar de Verena",
-        "descripcion":"Un bar inexistente utilizado para probar el comportamiento de la página web",
-        "imagen":"public/descarga.jpg",
-        "direccion":"Notengo Idea 1123",
-        "barrio": "Ejemplo",
-        "ubicacion":"",
-        "puntuacion": "3/5",
-        "categorias": {
-            "bar": true,
-            "cafeteria": true
-        },
-        "vipcomerce": true,
-        "id": 9
-    
-    },
-    {
-        "nombre": "Desarmadero",
-        "descripcion":"Un barsito en Villa Crespo, tienen varias canillas de cerveza artesanal entre las que se incluyen las producidas por ellos mismos.",
-        "imagen":"public/descarga2.jpg",
-        "direccion":"Jose Ignacio Gorriti 4295",
-        "barrio": "Palermo",
-        "ubicacion":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.3957263480143!2d-58.426340685176854!3d-34.59415356449821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca795cae367b%3A0x96a078708e4bb085!2sDesarmadero%20Bar!5e0!3m2!1ses!2sar!4v1651965830859!5m2!1ses!2sar",
-        "puntuacion": "4/5",
-        "categorias": {
-            "cerveceria": true,
-            "patioComida": true
-        },
-        "vipcomerce": false,
-        "id": 10
-    
-    },
-    {
-        "nombre": "El Emergente",
-        "descripcion":"Centro cultural con un escenario por donde pasan varios artistas de la escena local.",
-        "imagen":"public/descarga 3.jpg",
-        "direccion":"Figueroa 1030 y Gallo 333",
-        "barrio": "Almagro",
-        "ubicacion":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.1992093391755!2d-58.422803991967726!3d-34.59912380891913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca7cb36091e9%3A0x14a4ef26384273e1!2sEl%20Emergente%20Almagro!5e0!3m2!1ses-419!2sar!4v1651966675048!5m2!1ses-419!2sar",
-        "puntuacion": "4/5",
-        "categorias": {
-            "centroCultural": true
-        },
-        "vipcomerce": false,
-        "id": 11
-    
-    }
-    
+    }    
 ]

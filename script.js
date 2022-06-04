@@ -3,11 +3,12 @@ import {darkMode,
         verUbicacion, 
         obtenerDatosBares, 
         menuResponsive, 
-        crearTarjeta } from "./components/functions.js"
+        crearTarjeta, } from "./components/functions.js"
 
 import {rankSort, vipSort} from "./components/orderby.js" 
 
 let bares = await obtenerDatosBares();
+
 
 // CREAR TARJETAS DE BARES CON DATA DE ARRAY BARES 
 crearTarjeta(bares);
