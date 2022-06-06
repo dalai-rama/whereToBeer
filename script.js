@@ -9,6 +9,9 @@ import {rankSort, vipSort} from "./components/orderby.js"
 
 let bares = await obtenerDatosBares();
 
+if( 'serviceWorker' in navigator ){
+    navigator.serviceWorker.register("sw.js")
+}
 
 // CREAR TARJETAS DE BARES CON DATA DE ARRAY BARES 
 crearTarjeta(bares);
