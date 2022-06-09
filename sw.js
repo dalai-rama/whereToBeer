@@ -6,7 +6,8 @@ let assets = [  "./",
                 "./components/functions.js", 
                 "./components/orderby.js", 
                 "./profile/profile.html",
-                "./profile/profile.js" ]
+                "./profile/profile.js",
+                "./bares.json" ]
 
 self.addEventListener("install", event => {
     event.waitUntil(
