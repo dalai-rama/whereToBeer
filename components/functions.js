@@ -47,7 +47,7 @@ export function crearTarjeta(data){
         <h2>${nombre} </h2>
         <div class="rate" title="Este puntaje esta deliberado al azar, ndea">${puntuacion} ⭐</div>
         <div class="imagenTarjeta">
-            <img src="/${imagen}">
+            <img src="./${imagen}">
         </div>
         <p>${descripcion}</p>
         <h5>${direccion}  -  ${barrio}</h5>

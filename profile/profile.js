@@ -39,7 +39,7 @@ function crearTarjeta(data){
         <h2>${nombre} </h2>
         <div class="rate">${puntuacion} ⭐</div>
         <div class="imagenTarjeta">
-            <img src="/${imagen}" onclick="showCarousel()">
+            <img src="../${imagen}" onclick="showCarousel()">
         </div>
         <p>${descripcion}</p>
         <h5>${direccion}  -  ${barrio}</h5>
