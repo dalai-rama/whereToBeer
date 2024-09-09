@@ -39,7 +39,7 @@ function crearTarjeta(data){
         <h2>${nombre} </h2>
         <div class="rate">${puntuacion} ⭐</div>
         <div class="imagenTarjeta">
-            <img src="../${imagen}" onclick="showCarousel()">
+            <img src="/whereToBeer/${imagen}" onclick="showCarousel()">
         </div>
         <p>${descripcion}</p>
         <h5>${direccion}  -  ${barrio}</h5>
@@ -114,9 +114,6 @@ function removerFavorito(id){
       })
     }
 
-
-
-
 // LIGHT & DARK MODE
 localStorage.getItem("theme")=="light" ? lightModeProfile() : darkModeProfile();
 
@@ -139,6 +136,3 @@ for( let bar of bares){
     let btnUb = document.querySelector(`#ub${bar.id}`)
     btnUb==null ? console.log() : btnUb.addEventListener("click", function(){verUbicacion("if"+bar.id)})
 }
-
-
-
