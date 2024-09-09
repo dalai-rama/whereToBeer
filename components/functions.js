@@ -26,8 +26,8 @@ export const obtenerDatosBares = async ()=>{
 }
 
 // CREAR TARJETAS DE BARES 
-export function crearTarjeta(data){
-    const main = document.getElementById("mainCenter")
+export function crearTarjeta(data, id){
+    const main = document.getElementById(id)
     
     data.forEach((data)=>{
     const {

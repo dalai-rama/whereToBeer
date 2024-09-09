@@ -14,7 +14,7 @@ if( 'serviceWorker' in navigator ){
 }
 
 // CREAR TARJETAS DE BARES CON DATA DE ARRAY BARES 
-crearTarjeta(bares);
+crearTarjeta(bares, "mainCenter");
 
 // verUbicacion - declarar boton y añadir addeventlistener
 for( let bar of bares){
