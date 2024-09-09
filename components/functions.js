@@ -20,7 +20,7 @@ export function sortUs(prop) {
 
 // OBTENER BARES ASYNC
 export const obtenerDatosBares = async ()=>{
-    let bares = await fetch("/bares.json")
+    let bares = await fetch("./bares.json")
     .then(res => res.json())
     return bares;
 }
