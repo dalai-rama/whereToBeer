@@ -15,3 +15,9 @@ It borns from the idea of makin a cultural agenda, but just for the mockup I use
 - Acces to the geolocation API
 - Acces to IOS & Android notification API
 - Make an USER and validate it
+
+`````
+
+For a preview you can check the github pages as a DEMO
+
+##### https://kaio-rama.github.io/whereToBeer/
