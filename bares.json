@@ -3,8 +3,8 @@
         "descripcion":"Un bar inexistente utilizado para probar el comportamiento de la página web",
         "imagen":"public/descarga.jpg",
         "direccion":"Fake Street 1123",
-        "barrio": "Puerto Madero",
-        "ubicacion":"https://www.google.es/maps/place/C.+del+Conde+de+Urgel,+63,+Eixample,+08011+Barcelona/@41.3826514,2.1572363,17.29z/data=!4m6!3m5!1s0x12a4a289b77183a9:0x88158cefc7e23ebe!8m2!3d41.3824835!4d2.1578512!16s%2Fg%2F11rg5wzfn4?entry=ttu&g_ep=EgoyMDI0MDkwOC4wIKXMDSoASAFQAw%3D%3D",
+        "barrio": "Belgrano",
+        "ubicacion":"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5526.175078011845!2d-58.45988639967298!3d-34.55651021647549!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9c859a1c9bdb7143!2sGato%20Rojo%2C%20Espacio%20Cultural!5e0!3m2!1ses-419!2sar!4v1654291927891!5m2!1ses-419!2sar",
         "puntuacion": "3/5",
         "categorias": {
             "bar": true,
