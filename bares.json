@@ -1,10 +1,10 @@
 [    {
-        "nombre": "Bar Inexistente",
+        "nombre": "Bar Test",
         "descripcion":"Un bar inexistente utilizado para probar el comportamiento de la página web",
         "imagen":"public/descarga.jpg",
-        "direccion":"Notengo Idea 1123",
+        "direccion":"Fake Street 1123",
         "barrio": "Puerto Madero",
-        "ubicacion":"",
+        "ubicacion":"https://www.google.es/maps/place/C.+del+Conde+de+Urgel,+63,+Eixample,+08011+Barcelona/@41.3826514,2.1572363,17.29z/data=!4m6!3m5!1s0x12a4a289b77183a9:0x88158cefc7e23ebe!8m2!3d41.3824835!4d2.1578512!16s%2Fg%2F11rg5wzfn4?entry=ttu&g_ep=EgoyMDI0MDkwOC4wIKXMDSoASAFQAw%3D%3D",
         "puntuacion": "3/5",
         "categorias": {
             "bar": true,
